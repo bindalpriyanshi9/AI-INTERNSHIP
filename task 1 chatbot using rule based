@@ -1,0 +1,23 @@
+def get_response(user_input):
+    user_input = user_input.lower()  # Convert user input to lowercase for easier matching
+    
+    # Define rules and responses
+    if "weather" in user_input:
+        return "The weather today is sunny."
+    elif "time" in user_input:
+        return "The current time is 2:30 PM."
+    elif "greeting" in user_input or "hello" in user_input:
+        return "Hello! How can I assist you today?"
+    elif "goodbye" in user_input or "bye" in user_input:
+        return "Goodbye! Have a great day!"
+    else:
+        return "I'm sorry, I didn't understand that."
+
+# User interaction loop
+while True:
+    user_query = input("You: ")
+    if user_query.lower() == 'exit':
+        print("Bot: Goodbye!")
+        break
+    bot_response = get_response(user_query)
+    print("Bot:", bot_response)
